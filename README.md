@@ -37,9 +37,17 @@ Login and setup wifi (using Edimax dongle)
 Then:
 sudo apt update
 sudo apt upgrade
-sudo reboot, interupt, modeset=0; build-essential; cuda install defaults ---
+sudo reboot (interupt the boot as above and apply the modeset fix again)
 
--???
+
+Download and install cuda_11.7.0_515.43.04_linux.run
+wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
+sudo apt install build-essential
+sudo sh cuda_11.6.0_515.43.04_linux.run
+Edit your .bashrc and add
+export PATH="/usr/local/cuda-11.7/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
+
 sudo apt autoremove
 sudo apt dist-upgrade
 
@@ -49,16 +57,6 @@ GRUB_SAVEDEFAULT=true
 And run:
 sudo update-grub
 
-Then:
-sudo reboot (interupt the boot as above and apply the modeset fix again)
-
-Download cuda_11.7.0_515.43.04_linux.run
-sudo apt install build-essential
-sudo sh cuda_11.6.0_515.43.04_linux.run
-
-Edit your .bashrc and add
-export PATH="/usr/local/cuda-11.7/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 sudo reboot (no need for modeset fix anymore)
 
 gui should work - nvidia-smi should work
@@ -81,24 +79,10 @@ def _write_kms_settings(self, value):
 ```
 ---
 ```
-Usual setup should now work, e.g.
-
-Install CUDA 11.7
-DO NOT allow the driver to be updated (deselect during config)
-wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
-sudo sh cuda_11.7.0_515.43.04_linux.run
-
-Edit your .bashrc and add
-export PATH="/usr/local/cuda-11.7/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
+Usual additional setup should now work, e.g.
 
 Install cuDNN 11.x (requires login)
-https://developer.nvidia.com/compute/cudnn/secure/8.4.1/local_installers/11.6/cudnn-linux-x86_64-8.4.1.50_cuda11.6-archive.tar.xz
-# tar -xvf cudnn-11.3-linux-x64-v8.2.0.53.tgz
-sudo cp -P cuda/lib64/* /usr/local/cuda/lib64/
-sudo cp -P cuda/include/* /usr/local/cuda/include/
-sudo chmod a+r /usr/local/cuda/include/cudnn.h
-sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
 
 Install docker
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
