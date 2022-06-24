@@ -43,7 +43,7 @@ sudo reboot (interupt the boot as above and apply the modeset fix again)
 Download and install cuda_11.7.0_515.43.04_linux.run
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
 sudo apt install build-essential
-sudo sh cuda_11.6.0_515.43.04_linux.run
+sudo sh cuda_11.7.0_515.43.04_linux.run
 Edit your .bashrc and add
 export PATH="/usr/local/cuda-11.7/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
