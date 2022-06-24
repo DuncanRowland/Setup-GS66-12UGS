@@ -1,4 +1,5 @@
-# Setup-GS66-12UGS
+```
+Setup-GS66-12UGS
 Setup notes for MSI GS66 Laptop
 
 Wifi - faff about with backports, no time!
@@ -72,23 +73,22 @@ def _write_kms_settings(self, value):
    return
    ...
 
-Install CUDA 11.3 - !! DO NOT UPDATE DRIVER !!
-# sh cuda_11.3.1_465.19.01_linux.run
+Install CUDA 11.7
+DO NOT allow the driver to be updated (deselect during config)
+wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
+sudo sh cuda_11.7.0_515.43.04_linux.run
 
-$ vi ~karbon/.bashrc
-export PATH="/usr/local/cuda-11.3/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH"
+Edit your .bashrc and add
+export PATH="/usr/local/cuda-11.7/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 
 Install cuDNN 11.3
 # tar -zxvf cudnn-11.3-linux-x64-v8.2.0.53.tgz
-# cp cuda/lib64/* /usr/local/cuda/lib64/
-# cp cuda/include/* /usr/local/cuda/include/
-# chmod a+r /usr/local/cuda/include/cudnn.h
-# chmod a+r /usr/local/cuda/lib64/libcudnn*
-
-==========
-= DOCKER =
-==========
+sudo cp -P cuda/lib64/* /usr/local/cuda/lib64/
+sudo cp -P cuda/include/* /usr/local/cuda/include/
+sudo chmod a+r /usr/local/cuda/include/cudnn.h
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 
 Install docker
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
+```
