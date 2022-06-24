@@ -82,7 +82,8 @@ Edit your .bashrc and add
 export PATH="/usr/local/cuda-11.7/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 
-Install cuDNN 11.3
+Install cuDNN 11.x (requires login)
+https://developer.nvidia.com/compute/cudnn/secure/8.4.1/local_installers/11.6/cudnn-linux-x86_64-8.4.1.50_cuda11.6-archive.tar.xz
 # tar -zxvf cudnn-11.3-linux-x64-v8.2.0.53.tgz
 sudo cp -P cuda/lib64/* /usr/local/cuda/lib64/
 sudo cp -P cuda/include/* /usr/local/cuda/include/
