@@ -11,7 +11,11 @@ Here is how I setup my MSI GS66 (Early 2022, RTX 3070 Ti) to work with Ubuntu.
    - [Install](#install)
    - [First Boot](#first-boot)
    - [First Login](#first-login)
-
+   - [Second Login](#second-login)
+   - [Final Reboot](#final-reboot)
+- [Thoughts](#thoughts)
+- [Notes](#notes)
+ 
 # Caveats
 I am not interest in keeping Windows on my machine so I do a full disk install. If I ever do need to use Windows I have found installing and booting from an external SSD to be a simple solution. I am currently using Ubuntu 20.04 as I found 22.04 to be unstable on this laptop.
 ## Wifi
@@ -52,6 +56,7 @@ nouveau.modeset=0
 ```
    - Press f10 and wait for reboot
 ## First Login
+Update
    - Login and setup wifi (using Edimax dongle)
    - Then, open a command prompt and type:
 ```
@@ -59,30 +64,40 @@ sudo apt update
 sudo apt upgrade
 sudo reboot
 ```
-## Second Login (Install NVidia Driver and CUDA)
+## Second Login
+Install NVIDIA Driver and CUDA
    - Interupt the boot as above[#first login] and apply the modeset fix again
    - Download and install cuda_11.7.0_515.43.04_linux.run
+```
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
 sudo apt install build-essential
 sudo sh cuda_11.7.0_515.43.04_linux.run
-Edit your .bashrc and add
+```
+   - Edit your .bashrc and add
+```
 export PATH="/usr/local/cuda-11.7/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
-
+```
+   - Finish updating
+```
 sudo apt autoremove
 sudo apt dist-upgrade
-
-Optionally, edit /etc/default/grub and add
+```
+   - Optionally, make grub remember the last booted kernal. Edit /etc/default/grub and add
+```
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
-And run:
-sudo update-grub
-
-sudo reboot (no need for modeset fix anymore)
-
-gui should work - nvidia-smi should work
 ```
----
+   - And update the grub configuration
+```
+sudo update-grub
+```
+## Final Reboot
+    - Reboot. There is no need for the modeset fix anymore.
+    - The Desktop should work
+    - The NVIDIA driver should be working too (on-demand)
+
+# Thoughts
 ```
 Couple of things I noted if you run prime-select (untested!):
 
@@ -98,7 +113,7 @@ def _write_kms_settings(self, value):
    return
    ...
 ```
----
+# Notes
 ```
 Usual additional setup should now work, e.g.
 
@@ -107,4 +122,7 @@ https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
 
 Install docker
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
+
+NVIDIA on-demand run with GPU 
+__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxgears
 ```
