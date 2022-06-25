@@ -87,7 +87,7 @@ export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 sudo apt autoremove
 sudo apt dist-upgrade
 ```
-   - Optionally, make grub remember the last booted kernal. Edit /etc/default/grub and add
+   - Optionally, make grub remember the last booted kernel. Edit /etc/default/grub and add
 ```
 GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
