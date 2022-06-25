@@ -29,7 +29,7 @@ Instead I use a USB webcam. Again, it would probably be possible to get this wor
 
 # Installation
 ## Prereqs
-   - Make and insert:
+   - Insert:
       - Bootable usb stick 20.04.3 (not 20.04.4)
       - Wifi adapter (Edimax)
 ## BIOS
