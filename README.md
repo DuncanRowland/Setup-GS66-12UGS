@@ -17,7 +17,9 @@ Here is how I setup my MSI GS66 (Early 2022, RTX 3070 Ti) to work with Ubuntu.
 - [Notes](#notes)
  
 # Caveats
-I do a full disk install. If I ever do need to use Windows I have found installing and booting from an external SSD to be a simple solution. I am currently using Ubuntu 20.04 as I found 22.04 to be unstable on this laptop (sporadic hangs).
+I do a full disk install.  
+If I ever do need to use Windows I have found installing and booting from an external SSD to be a simple solution.  
+I am currently using Ubuntu 20.04 as I found 22.04 to be unstable on this laptop (sporadic hangs).
 ## Wifi
 I do not have the built-in wifi working.  
 Instead I use a USB adapter (Edimax). I think the drivers could be loaded manually, but I prefer to simply wait and hope they get included in a kernel update.
