@@ -93,9 +93,12 @@ GRUB_SAVEDEFAULT=true
 sudo update-grub
 ```
 ## Final Reboot
-    - Reboot. There is no need for the modeset fix anymore.
-    - The Desktop should work
-    - The NVIDIA driver should be working too (on-demand)
+```
+sudo reboot
+```
+- There is no need for the modeset fix anymore.
+- The Desktop should work
+- The NVIDIA driver should be working too (on-demand)
 
 # Thoughts
 ```
