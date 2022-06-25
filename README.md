@@ -19,14 +19,16 @@ Here is how I setup my MSI GS66 (Early 2022, RTX 3070 Ti) to work with Ubuntu.
 # Caveats
 I do a full disk install. If I ever do need to use Windows I have found installing and booting from an external SSD to be a simple solution. I am currently using Ubuntu 20.04 as I found 22.04 to be unstable on this laptop (sporadic hangs).
 ## Wifi
-I do not have the onboard wifi working. Instead I use a USB adapter (Edimax). I expect the drivers could be loaded manually, but I prefer to simply wait and hope they get included in a kernel update.
+I do not have the built-in wifi working.  
+Instead I use a USB adapter (Edimax). I think the drivers could be loaded manually, but I prefer to simply wait and hope they get included in a kernel update.
 ## Webcam
-I do not have the on-board webcam working. Instead I use a USB webcam. Again, it would probably be possible to get this working given time.
+I do not have the built-in webcam working.  
+Instead I use a USB webcam. Again, it would probably be possible to get this working given time.
 
 # Installation
 ## Prereqs
    - Make and insert:
-      - Bootable usb stick 20.04.3
+      - Bootable usb stick 20.04.3 (not 20.04.4)
       - Wifi adapter (Edimax)
 ## BIOS
    - Power on and repeated press delete to get into BIOS
