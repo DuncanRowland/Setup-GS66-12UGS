@@ -1,6 +1,6 @@
 # MSI GS66 12UGS (2022) for Data Science
 
-Here is how I setup my MSI GS66 (Early 2022, RTX 3070 Ti) to work with Ubuntu.
+Here is how I setup my MSI GS66 (Early 2022, i7-12700H, RTX 3070 Ti) to work with Ubuntu.
 
 - [Caveats](#caveats)
    - [Wifi](#wifi)
