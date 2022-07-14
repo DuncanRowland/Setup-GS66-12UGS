@@ -29,7 +29,7 @@ Instead I use a USB adapter (Edimax). I think the drivers could be loaded manual
 Instead I use a USB webcam. Again, it would probably be possible to get this working given time.
 ## External Monitor
 #### ~~I only seem to be able to get either internal or external monitor working, not both.~~
-Fixed in kernel update (5.15)
+Fixed in kernel update (5.15.0-41-generic)
 
 
 # Installation
