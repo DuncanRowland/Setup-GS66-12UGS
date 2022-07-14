@@ -28,8 +28,9 @@ Instead I use a USB adapter (Edimax). I think the drivers could be loaded manual
 #### I do not have the built-in webcam working.  
 Instead I use a USB webcam. Again, it would probably be possible to get this working given time.
 ## External Monitor
-#### I only seem to be able to get either internal or external monitor working, not both.
-I switch between the two using prime-select and rebooting ('on-demand' is internal, 'nvidia' is external), removing /lib/modprobe.d/nvidia-kms.conf if needed.
+#### ~~I only seem to be able to get either internal or external monitor working, not both.~~
+Fixed in kernel update (5.15)
+
 
 # Installation
 ## Prereqs
